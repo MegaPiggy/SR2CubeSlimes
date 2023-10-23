@@ -14,7 +14,7 @@ using MelonLoader;
 [assembly: AssemblyCopyright("Copyright © MegaPiggy 2022")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
-[assembly: MelonInfo(typeof(EntryPoint), "Cube Slimes", "1.0.0", "MegaPiggy", "https://www.nexusmods.com/slimerancher2/mods/14")]
+[assembly: MelonInfo(typeof(EntryPoint), "Cube Slimes", "1.1.0", "MegaPiggy", "https://www.nexusmods.com/slimerancher2/mods/14")]
 [assembly: MelonGame("MonomiPark", "SlimeRancher2")]
 // Setting ComVisible to false makes the types in this assembly not visible 
 // to COM components.  If you need to access a type in this assembly from 
@@ -34,5 +34,5 @@ using MelonLoader;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.0.0.0")]
-[assembly: AssemblyFileVersion("1.0.0.0")]
+[assembly: AssemblyVersion("1.1.0.0")]
+[assembly: AssemblyFileVersion("1.1.0.0")]

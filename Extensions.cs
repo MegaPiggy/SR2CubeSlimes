@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using Il2Cpp;
+using Il2CppInterop.Runtime.InteropTypes;
+using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using UnityEngine;
@@ -6,6 +8,8 @@ using UnityEngine.SceneManagement;
 
 public static class Extensions
 {
+	public static T LoadFromObject<T>(this AssetBundle bundle, string name) where T : Object => ((Il2CppObjectBase)bundle.LoadAsset(name)).Cast<GameObject>().GetComponentInChildren<T>();
+
 	public static void GenerateBoneData(this SlimeAppearanceApplicator slimePrefab, SlimeAppearanceObject bodyApp, float scale = 1)
 	{
 		var mesh = bodyApp.GetComponent<SkinnedMeshRenderer>().sharedMesh;
