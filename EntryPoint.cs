@@ -137,7 +137,7 @@ namespace CubeSlimes
 					{
 						lod3.IgnoreLODIndex = true;
 					}
-					if (name.StartsWith("QuickSilver") || name.StartsWith("Puddle"))
+					if (name.StartsWith("QuickSilver") || name.StartsWith("Saucer"))
 						element.Prefabs = new SlimeAppearanceObject[4] { element.Prefabs.ElementAtOrDefault(0), element.Prefabs.ElementAtOrDefault(1), element.Prefabs.ElementAtOrDefault(2), lod3 };
 					else if (name.StartsWith("Gold"))
 						element.Prefabs = new SlimeAppearanceObject[5] { element.Prefabs.ElementAtOrDefault(1), element.Prefabs.ElementAtOrDefault(2), lod3, element.Prefabs.ElementAtOrDefault(4), element.Prefabs.ElementAtOrDefault(5) };
