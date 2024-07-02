@@ -62,10 +62,6 @@ namespace CubeSlimes
 			"slime_tarr_bite",
 			"slime_gold",
 			"slime_quicksilver",
-			"slime_gordo",
-			"slime_gordo_LOD1",
-			"mosaicGordo_LOD0",
-			"mosaicGordo_LOD1",
 			"slime_saber",
 		};
 
