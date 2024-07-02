@@ -13,6 +13,7 @@ using Object = UnityEngine.Object;
 using Il2CppMonomiPark.SlimeRancher.Script.Util;
 using Il2CppMonomiPark.SlimeRancher;
 using Il2Cpp;
+using Il2CppSystem.Linq;
 
 namespace CubeSlimes
 {
@@ -143,6 +144,22 @@ namespace CubeSlimes
 						element.Prefabs = new SlimeAppearanceObject[5] { element.Prefabs.ElementAtOrDefault(1), element.Prefabs.ElementAtOrDefault(2), lod3, element.Prefabs.ElementAtOrDefault(4), element.Prefabs.ElementAtOrDefault(5) };
 					else
 						element.Prefabs = new SlimeAppearanceObject[3] { element.Prefabs.ElementAtOrDefault(1), element.Prefabs.ElementAtOrDefault(2), lod3 };
+				}
+			}
+
+			SlimeDefinition[] definitions = Resources.FindObjectsOfTypeAll<SlimeDefinition>();
+			foreach (SlimeDefinition definition in definitions)
+			{
+				if (definition.Name == "Gold")
+				{
+					foreach (SlimeAppearance appearance in definition.Appearances.ToList())
+					{
+						var structure = appearance.Structures.FirstOrDefault();
+						if (structure != null)
+						{
+							structure.ElementMaterials = new SlimeAppearanceMaterials[5] { structure.ElementMaterials.ElementAtOrDefault(1), structure.ElementMaterials.ElementAtOrDefault(2), structure.ElementMaterials.ElementAtOrDefault(3), structure.ElementMaterials.ElementAtOrDefault(4), structure.ElementMaterials.ElementAtOrDefault(5) };
+						}
+					}
 				}
 			}
 		}
