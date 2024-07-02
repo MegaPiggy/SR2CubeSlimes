@@ -13,7 +13,7 @@ public static class Extensions
 	public static void GenerateBoneData(this SlimeAppearanceApplicator slimePrefab, SlimeAppearanceObject bodyApp, float scale = 1)
 	{
 		var mesh = bodyApp.GetComponent<SkinnedMeshRenderer>().sharedMesh;
-		bodyApp.AttachedBones = new SlimeAppearance.SlimeBone[] { SlimeAppearance.SlimeBone.Core, SlimeAppearance.SlimeBone.JiggleRight, SlimeAppearance.SlimeBone.JiggleLeft, SlimeAppearance.SlimeBone.JiggleTop, SlimeAppearance.SlimeBone.JiggleBottom, SlimeAppearance.SlimeBone.JiggleFront, SlimeAppearance.SlimeBone.JiggleBack };
+		bodyApp.AttachedBones = new SlimeAppearance.SlimeBone[] { SlimeAppearance.SlimeBone.CORE, SlimeAppearance.SlimeBone.JIGGLE_RIGHT, SlimeAppearance.SlimeBone.JIGGLE_LEFT, SlimeAppearance.SlimeBone.JIGGLE_TOP, SlimeAppearance.SlimeBone.JIGGLE_BOTTOM, SlimeAppearance.SlimeBone.JIGGLE_FRONT, SlimeAppearance.SlimeBone.JIGGLE_BACK };
 		var v = mesh.vertices;
 		var max = new Vector3(float.NegativeInfinity, float.NegativeInfinity, float.NegativeInfinity);
 		var min = new Vector3(float.PositiveInfinity, float.PositiveInfinity, float.PositiveInfinity);
@@ -68,7 +68,7 @@ public static class Extensions
 
 		var p = new Matrix4x4[bodyApp.AttachedBones.Length];
 		for (int i = 0; i < bodyApp.AttachedBones.Length; i++)
-			p[i] = slimePrefab.Bones.First((x) => x.Bone == bodyApp.AttachedBones[i]).BoneObject.transform.worldToLocalMatrix * slimePrefab.Bones.First((x) => x.Bone == SlimeAppearance.SlimeBone.Root).BoneObject.transform.localToWorldMatrix;
+			p[i] = slimePrefab.Bones.First((x) => x.Bone == bodyApp.AttachedBones[i]).BoneObject.transform.worldToLocalMatrix * slimePrefab.Bones.First((x) => x.Bone == SlimeAppearance.SlimeBone.ROOT).BoneObject.transform.localToWorldMatrix;
 		mesh.bindposes = p;
 	}
 
